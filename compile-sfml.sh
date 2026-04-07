@@ -48,7 +48,7 @@ compile() {
 }
 
 read -r -p "Homebrew or manual(H/M)?: " horm
-if [[ "$horm" == "H" || "$horm" == "h" ]]; then
+if [[ "$horm" == "H" || "$horm" == "h" || -z horm ]]; then
 	echo "Welcome to compile SFML!"
 	if ! verify_brew; then
 		get_brew
@@ -58,8 +58,8 @@ if [[ "$horm" == "H" || "$horm" == "h" ]]; then
 else
 	curl -fsSLO https://www.sfml-dev.org/files/SFML-2.6.2-macOS-clang-arm64.tar.gz
 	mkdir -p "$HOME/sfml"
-	tar -xvzf SFML-2.6.2-macOS-clang-arm64.tar.gz -C "$HOME/sfml"
-	rm -f SFML-2.6.2-macOS-clang-arm64.tar.gz
+	tar xf SFML-2.6.2-macOS-clang-arm64.tar.gz -C "$HOME/sfml"
+	rm -rf SFML-2.6.2-macOS-clang-arm64.tar.gz
 fi
 
 setup
