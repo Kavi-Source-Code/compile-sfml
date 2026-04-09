@@ -12,3 +12,9 @@ To run it:
 `chmod 755 compile-sfml.sh`
 
 `./compile-sfml.sh`
+
+OR:
+
+	bash <(curl -fsSL https://raw.githubusercontent.com/Kavi-Source-Code/compile-sfml/HEAD/compile-sfml.sh)
+
+still a work in progress...
